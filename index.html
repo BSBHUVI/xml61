@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            display: none;
+        }
+    </style>
+    
+</head>
+<body onload="copy()" >
+    <textarea id="my">
+       
+        <?xml version="1.0" encoding="utf-8"?>
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+        
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="309dp"
+                android:layout_height="72dp"
+                android:text="Parsing xml and json data"
+                android:textAlignment="center"
+                android:textColor="#E31717"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.068" />
+        
+            <Button
+                android:id="@+id/xml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="xml"
+                android:text="parse xml data"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.342" />
+        
+            <Button
+                android:id="@+id/json"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="json"
+                android:text="parse json data"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.499" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </textarea>
+  
+    <script>
+        const copy=()=>{
+            var copyText = document.getElementById("my");
+
+           
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); 
+          
+            navigator.clipboard.writeText(copyText.value);
+          
+           
+            alert("Copied ");
+    }
+    </script>
+</body>
+</html>
